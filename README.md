@@ -58,7 +58,6 @@ Admins have complete control over the system:
 
 ## 🛠️ Tech Stack
 
-> *(Update this section if needed)*
 
 **Frontend**
 - React.js
