@@ -2,7 +2,6 @@ package com.employee.employee_management.controller;
 
 import com.employee.employee_management.model.User;
 import com.employee.employee_management.service.AdminService;
-import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

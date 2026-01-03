@@ -1,6 +1,5 @@
 package com.employee.employee_management.service;
 
-import com.employee.employee_management.model.Role;
 import com.employee.employee_management.model.User;
 import com.employee.employee_management.repository.UserRepository;
 import org.springframework.stereotype.Service;

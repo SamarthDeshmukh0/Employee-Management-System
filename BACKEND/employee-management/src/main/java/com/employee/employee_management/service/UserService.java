@@ -5,19 +5,16 @@ import com.employee.employee_management.dto.LoginResponse;
 import com.employee.employee_management.dto.SignupRequest;
 import com.employee.employee_management.model.User;
 import com.employee.employee_management.repository.UserRepository;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
     
     private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, JwtService jwtService) {
+    public UserService(UserRepository userRepository, JwtService jwtService) {
         this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
         this.jwtService = jwtService;
     }
     
@@ -49,6 +46,7 @@ public class UserService {
         
         return new LoginResponse(
                 token,
+                user.getId(),
                 user.getFirstName(),
                 user.getLastName(),
                 user.getEmail(),

@@ -5,20 +5,22 @@ import com.employee.employee_management.model.Role;
 public class LoginResponse {
     
     private String token;
+    private Long userId;
     private String firstName;
     private String lastName;
     private String email;
-    private Role role;
+    private String role;
     
     // Constructors
     public LoginResponse() {}
     
-    public LoginResponse(String token, String firstName, String lastName, String email, Role role) {
+    public LoginResponse(String token, Long userId, String firstName, String lastName, String email, Role role) {
         this.token = token;
+        this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.role = role;
+        this.role = role.name();
     }
     
     // Getters and Setters
@@ -28,6 +30,14 @@ public class LoginResponse {
     
     public void setToken(String token) {
         this.token = token;
+    }
+    
+    public Long getUserId() {
+        return userId;
+    }
+    
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
     
     public String getFirstName() {
@@ -54,11 +64,11 @@ public class LoginResponse {
         this.email = email;
     }
     
-    public Role getRole() {
+    public String getRole() {
         return role;
     }
     
     public void setRole(Role role) {
-        this.role = role;
+        this.role = role.name();
     }
 }
